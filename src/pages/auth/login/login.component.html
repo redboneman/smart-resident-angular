@@ -1,0 +1,23 @@
+<div class="right-side_container">
+    <h1 class="title" translate="LOGIN.TITLE"></h1>
+    <p class="description" translate="LOGIN.DESCRIPTION"></p>
+    <form class="login-form" [formGroup]="authForm" (ngSubmit)="submitForm()">
+        <mat-form-field appearance="standard" class="form-field" hideRequiredMarker>
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="johndoe@mail.com" formControlName="email">
+            <mat-error *ngIf="false"></mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard" class="form-field" hideRequiredMarker>
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="********" formControlName="password" #passInput>
+            <mat-icon matSuffix svgIcon="pass_eye" (click)="changePassInputType(passInput)"></mat-icon>
+            <mat-error *ngIf="false"></mat-error>
+        </mat-form-field>
+        <a class="sr-kit_link" routerLink="recovery">
+            Forgot password?
+        </a>
+        <button mat-button class="sr-kit_button" data-color="primary">
+            Submit
+        </button>
+    </form>
+</div>

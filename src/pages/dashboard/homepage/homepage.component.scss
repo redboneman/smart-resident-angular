@@ -1,0 +1,10 @@
+.main-wrapper {
+    padding: 1rem;
+    height: 200vh;
+}
+
+@media screen and (min-width: 1280px) {
+    sr-header {
+        display: none;
+    }
+}

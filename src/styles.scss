@@ -1,0 +1,13 @@
+@use 'reseter.css/src/scss/reseter';
+@use 'styles/material';
+@use 'styles/variables';
+@use 'styles/fonts';
+@use 'styles/components';
+
+html {
+    font-family: ProximaNova, -apple-system, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

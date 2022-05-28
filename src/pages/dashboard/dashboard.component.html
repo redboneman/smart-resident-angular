@@ -1,0 +1,76 @@
+<!--<div class="dashboard-wrapper">
+    <aside class="left-side" [class.opened]="dashboardService.navigationOpened">
+        <a routerLink="/dashboard">
+            <sr-logo></sr-logo>
+        </a>
+        <div class="services-container">
+            <nav class="services-grid">
+                <a *ngFor="let service of dashboardService.services; index as i"
+                   [tabindex]="0"
+                   class="service-item"
+                   [routerLink]="service.key"
+                >
+                    <div class="service-item_icon">
+                        <mat-icon [svgIcon]="service.icon"></mat-icon>
+                        <span class="service-item_badge" *ngIf="service.badge"></span>
+                    </div>
+                    <span class="service-item_title">{{service.key | translate}}</span>
+                </a>
+            </nav>
+        </div>
+        <a class="dashboard-homepage" routerLink="/dashboard">
+            <mat-icon svgIcon="dashboard"></mat-icon>
+            Dashboard
+        </a>
+    </aside>
+    <div class="central-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+</div>-->
+
+<div class="dashboard-wrapper">
+    <aside class="left-side" [class.opened]="dashboardService.navigationOpened">
+        <a routerLink="/dashboard" class="left-side_logo">
+            <sr-logo></sr-logo>
+        </a>
+        <div class="left-side_user">
+            <div class="left-side_user-avatar"></div>
+            <p class="left-side_user-name">Test User</p>
+        </div>
+        <div class="left-side_services">
+            <nav class="services-grid">
+                <a class="service-dashboard" routerLink="/dashboard">
+                    <mat-icon svgIcon="dashboard"></mat-icon>
+                    Dashboard
+                </a>
+                <a *ngFor="let service of dashboardService.services; index as i"
+                   [tabindex]="0"
+                   class="service-item"
+                   [routerLink]="service.key"
+                   routerLinkActive="active"
+                >
+                    <div class="service-item_icon">
+                        <mat-icon [svgIcon]="service.icon"></mat-icon>
+                        <span class="service-item_badge" *ngIf="service.badge"></span>
+                    </div>
+                    <span class="service-item_title">{{service.key | translate}}</span>
+                </a>
+                <a class="service-log-out">
+                    <mat-icon>logout</mat-icon>
+                    Log out
+                </a>
+            </nav>
+        </div>
+        <a class="dashboard-homepage" routerLink="/dashboard" routerLinkActive="active">
+            <mat-icon svgIcon="dashboard"></mat-icon>
+            Dashboard
+        </a>
+    </aside>
+    <div class="left-side_overlay"
+         (click)="dashboardService.toggleNavigation()"
+         [class.opened]="dashboardService.navigationOpened"
+    ></div>
+    <div class="central-wrapper">
+        <router-outlet></router-outlet>
+    </div>
+</div>
