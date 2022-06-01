@@ -1,0 +1,15 @@
+.sub-header {
+    display: flex;
+    align-items: center;
+
+    &_back-button {
+        //margin-right: 8px;
+    }
+
+    &_title {
+        font-size: 20px;
+        font-weight: 700;
+        font-family: ProximaNova, -apple-system, Arial, sans-serif;
+        line-height: 26px;
+    }
+}

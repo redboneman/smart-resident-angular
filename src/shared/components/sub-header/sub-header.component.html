@@ -1,0 +1,14 @@
+<div class="sub-header">
+    <button mat-icon-button
+            *ngIf="backButton"
+            (click)="onBack.emit()"
+            class="sub-header_back-button"
+    >
+        <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+
+    <span class="sub-header_title">
+        {{title}}
+    </span>
+
+</div>

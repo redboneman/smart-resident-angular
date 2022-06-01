@@ -1,0 +1,65 @@
+.banner-element {
+    position: relative;
+    box-shadow: 4px 4px 16px rgba(79, 55, 84, 0.15);
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 16px 16px 16px 24px;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 8px;
+        background: var(--component-primary);
+    }
+
+    &_text {
+        .title {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: var(--component-primary);
+            margin-bottom: 12px;
+            font-family: ProximaNova, -apple-system, Arial, sans-serif;
+        }
+
+        .description {
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 400;
+            color: #000000;
+            font-family: Geometria, sans-serif;
+
+            .highlight {
+                color: var(--component-primary);
+            }
+        }
+    }
+
+    .sr-kit_button {
+        margin-top: 32px;
+        font-size: 14px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .banner-element {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        &_text {
+            flex-grow: 1;
+            padding-right: 16px;
+        }
+
+        .sr-kit_button {
+            width: 160px;
+            margin: 0 0 0 16px;
+        }
+    }
+}

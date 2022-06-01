@@ -1,0 +1,15 @@
+<div class="banner-element">
+    <div class="banner-element_text">
+        <h3 class="title">
+            You have <strong>{{title.count}} {{title.type}}</strong>
+        </h3>
+        <p class="description">
+            Tenant <span class="highlight">{{tenant}}</span> mentioned a <span class="highlight">{{type}}</span>
+            for the accommodation <span class="highlight">{{address}}</span> on
+            <span class="highlight">{{formatDate(date)}}</span>
+        </p>
+    </div>
+    <button mat-button class="sr-kit_button" data-color="primary" *ngIf="buttonText" (click)="buttonClick.emit()">
+        {{buttonText}}
+    </button>
+</div>

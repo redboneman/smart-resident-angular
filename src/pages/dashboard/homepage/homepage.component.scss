@@ -1,10 +1,33 @@
 .main-wrapper {
-    padding: 1rem;
-    height: 200vh;
+    padding: 24px;
+
+    sr-sub-header {
+        margin-bottom: 24px;
+        display: block;
+    }
+
+    .content {
+        .section-title {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .banner-grid {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+    }
 }
 
 @media screen and (min-width: 1280px) {
     sr-header {
         display: none;
+    }
+
+    .main-wrapper {
+        padding: 24px 48px;
     }
 }
