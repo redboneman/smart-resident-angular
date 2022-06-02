@@ -20,7 +20,9 @@ export class BannerComponent implements OnInit {
     @Input()
     tenant: string = '';
     @Input()
-    type: string = '';
+    action: string = '';
+    @Input()
+    actionType: string = '';
     @Input()
     address: string = '';
     @Input()

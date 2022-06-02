@@ -4,8 +4,13 @@
             You have <strong>{{title.count}} {{title.type}}</strong>
         </h3>
         <p class="description">
-            Tenant <span class="highlight">{{tenant}}</span> mentioned a <span class="highlight">{{type}}</span>
-            for the accommodation <span class="highlight">{{address}}</span> on
+            Tenant
+            <span class="highlight">{{tenant}}</span>
+            {{actionType}}
+            <span class="highlight">{{action}}</span>
+            for the accommodation
+            <span class="highlight">{{address}}</span>
+            on
             <span class="highlight">{{formatDate(date)}}</span>
         </p>
     </div>

@@ -27,13 +27,13 @@
 .sr-kit_button.mat-button {
     border-radius: 100px;
     padding: 13px 26px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
     font-family: Geometria, sans-serif;
 
     &[data-size=m] {
         padding: 13px 26px;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 24px;
     }
 
@@ -41,6 +41,23 @@
         background: var(--component-gradient);
         box-shadow: var(--component-shadow);
         color: var(--component-color-primary);
+    }
+
+    &[data-color=secondary] {
+        background: transparent;
+        border: 1px solid var(--component-primary);
+        color: var(--component-primary);
+        transition: border .1s, color .1s;
+
+        .mat-button-focus-overlay {
+            background: transparent;
+        }
+    }
+
+    &[data-color=secondary]:hover {
+        background: transparent;
+        border: 1px solid var(--component-secondary);
+        color: var(--component-secondary);
     }
 }
 

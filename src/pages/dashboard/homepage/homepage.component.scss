@@ -1,3 +1,6 @@
+:host {
+}
+
 .main-wrapper {
     padding: 24px;
 
@@ -18,6 +21,63 @@
             flex-flow: column nowrap;
             gap: 24px;
             margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #d5d5d5;
+
+            &:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+
+        .intervention-grid {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 24px;
+
+            .intervention-card {
+                padding: 24px;
+                border-radius: 8px;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: space-between;
+                color: #ffffff;
+                text-align: center;
+                font-family: Geometria, sans-serif;
+
+                &.submitted {
+                    background: #83A3CE;
+                }
+
+                &.ongoing {
+                    background: #D48EAE;
+                }
+
+                &.closed {
+                    background: #AC7AB6;
+                }
+
+                .count {
+                    font-size: 48px;
+                    line-height: 64px;
+                    font-weight: 400;
+                }
+
+                .title {
+                    font-size: 20px;
+                    line-height: 26px;
+                    margin-bottom: 24px;
+                    font-weight: 700;
+                }
+
+                .link {
+                    font-size: 14px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    text-decoration: underline #ffffff;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }
@@ -29,5 +89,44 @@
 
     .main-wrapper {
         padding: 24px 48px;
+
+        .content {
+            .banner-grid {
+                .view-more {
+                    align-self: flex-end;
+                    min-width: 200px;
+                }
+            }
+
+            .intervention-grid {
+                flex-flow: row wrap;
+
+                .intervention-card {
+                    width: 200px;
+
+                    .count {
+                        font-size: 48px;
+                        line-height: 64px;
+                        font-weight: 400;
+                        margin-bottom: 16px;
+                    }
+
+                    .title {
+                        font-size: 20px;
+                        line-height: 26px;
+                        margin-bottom: 48px;
+                        font-weight: 700;
+                    }
+
+                    .link {
+                        font-size: 14px;
+                        line-height: 24px;
+                        font-weight: 400;
+                        text-decoration: underline #ffffff;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
     }
 }
