@@ -6,7 +6,7 @@
     width: 100%;
     max-width: min(90%, 300px);
     min-width: 300px;
-    height: 100vh;
+    height: 100%;
     top: 0;
     right: -120%;
     z-index: 8;
@@ -42,6 +42,7 @@
         right: unset;
         top: 0;
         box-shadow: none;
+        height: 100vh;
 
         &_overlay {
             display: none;
