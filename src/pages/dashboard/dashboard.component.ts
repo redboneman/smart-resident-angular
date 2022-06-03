@@ -25,4 +25,28 @@ export class DashboardComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
     }
 
+    public debug(data: any) {
+        console.log(data);
+    }
+
+    public rightSwap() {
+        if (this.dashboardService.rightPanelOpened) {
+            this.dashboardService.toggleRightPanel();
+            return;
+        }
+        if (!this.dashboardService.navigationOpened) {
+            this.dashboardService.toggleNavigation();
+        }
+    }
+
+    public leftSwap() {
+        if (this.dashboardService.navigationOpened) {
+            this.dashboardService.toggleNavigation();
+            return;
+        }
+        if (!this.dashboardService.rightPanelOpened) {
+            this.dashboardService.toggleRightPanel();
+        }
+    }
+
 }

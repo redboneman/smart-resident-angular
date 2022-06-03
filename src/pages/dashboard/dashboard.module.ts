@@ -11,7 +11,6 @@ import {DashboardService} from '../../shared/services/dashboard.service';
 import { HeaderComponent } from './header/header.component';
 import {MatButtonModule} from '@angular/material/button';
 
-
 @NgModule({
     declarations: [
         DashboardComponent,

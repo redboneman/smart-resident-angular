@@ -29,6 +29,12 @@
         width: 36px;
         height: 36px;
         border-radius: 50%;
-        background: #8f96a6;
+        background: #e4ddef;
+        //box-shadow: 0 0 8px rgba(0,0,0,.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        line-height: 24px;
     }
 }

@@ -11,6 +11,7 @@ interface DashboardServiceItem {
 export class DashboardService {
 
     public navigationOpened = false;
+    public rightPanelOpened = false;
 
     public services: DashboardServiceItem[] = [
         {
@@ -44,14 +45,12 @@ export class DashboardService {
         }
     ];
 
-    public markIncidents() {
-        const service = this.services.find(item => item.key === 'incidents')
-        if (!service) return;
-        service.badge = !service.badge;
-    }
-
     public toggleNavigation() {
         this.navigationOpened = !this.navigationOpened;
+    }
+
+    public toggleRightPanel() {
+        this.rightPanelOpened = !this.rightPanelOpened;
     }
 
 }

@@ -1,0 +1,50 @@
+.right-panel {
+    background: #f9f9f9;
+    display: flex;
+    flex-flow: column nowrap;
+    position: fixed;
+    width: 100%;
+    max-width: min(90%, 300px);
+    min-width: 300px;
+    height: 100vh;
+    top: 0;
+    right: -120%;
+    z-index: 8;
+    transition: right .2s ease;
+    box-shadow: -8px 0 16px rgba(0,0,0,.15);
+    padding: 24px;
+
+    &.opened {
+        right: 0;
+    }
+}
+
+.right-panel_overlay {
+    background: rgba(0, 0, 0, .3);
+    opacity: 0;
+    transition: opacity .2s;
+    position: fixed;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+    z-index: 7;
+
+    &.opened {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .right-panel {
+        position: sticky;
+        right: unset;
+        top: 0;
+        box-shadow: none;
+
+        &_overlay {
+            display: none;
+        }
+    }
+}

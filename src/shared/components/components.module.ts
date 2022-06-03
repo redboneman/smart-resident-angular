@@ -5,18 +5,21 @@ import { SubHeaderComponent } from './sub-header/sub-header.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { BannerComponent } from './banner/banner.component';
+import { RightPanelComponent } from './right-panel/right-panel.component';
 
 
 @NgModule({
     declarations: [
         LogoComponent,
         SubHeaderComponent,
-        BannerComponent
+        BannerComponent,
+        RightPanelComponent
     ],
     exports: [
         LogoComponent,
         SubHeaderComponent,
-        BannerComponent
+        BannerComponent,
+        RightPanelComponent
     ],
     imports: [
         CommonModule,

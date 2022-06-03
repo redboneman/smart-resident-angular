@@ -51,6 +51,7 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
+        padding: 24px 24px 24px 32px;
 
         &_text {
             flex-grow: 1;
@@ -58,7 +59,8 @@
         }
 
         .sr-kit_button {
-            width: 160px;
+            min-width: 160px;
+            width: auto;
             margin: 0 0 0 16px;
         }
     }

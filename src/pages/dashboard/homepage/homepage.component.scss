@@ -1,8 +1,13 @@
 :host {
+    @media screen and (min-width: 1280px) {
+        display: flex;
+        flex-flow: row nowrap;
+    }
 }
 
 .main-wrapper {
     padding: 24px;
+    flex-grow: 1;
 
     sr-sub-header {
         margin-bottom: 24px;
