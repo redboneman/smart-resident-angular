@@ -9,6 +9,7 @@ export class HammerConfig extends HammerGestureConfig {
         swipe: { direction: Hammer.DIRECTION_HORIZONTAL },
         pinch: { enable: false },
         rotate: { enable: false },
-        pan: { enable: false }
+        pan: { enable: false },
+        press: { enable: false }
     };
 }

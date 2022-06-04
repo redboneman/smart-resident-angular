@@ -1,4 +1,4 @@
-<div class="dashboard-wrapper" (swipeleft)="leftSwap()" (swiperight)="rightSwap()">
+<div class="dashboard-wrapper" sr-touch (swipeRight)="rightSwap()" (swipeLeft)="leftSwap()">
     <aside class="left-side" [class.opened]="dashboardService.navigationOpened">
         <a routerLink="/dashboard" class="left-side_logo">
             <sr-logo></sr-logo>

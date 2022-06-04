@@ -10,6 +10,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {DashboardService} from '../../shared/services/dashboard.service';
 import { HeaderComponent } from './header/header.component';
 import {MatButtonModule} from '@angular/material/button';
+import {TouchModule} from '../../shared/directives/touch.directive';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import {MatButtonModule} from '@angular/material/button';
         ComponentsModule,
         MatIconModule,
         TranslateModule,
-        MatButtonModule
+        MatButtonModule,
+        TouchModule
     ],
     providers: [
         DashboardService

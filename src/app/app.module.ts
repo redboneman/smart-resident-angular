@@ -31,13 +31,13 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         }),
         ComponentsModule,
-        HammerModule
+        // HammerModule
     ],
     providers: [
-        {
-            provide: HAMMER_GESTURE_CONFIG,
-            useClass: HammerConfig
-        },
+        // {
+        //     provide: HAMMER_GESTURE_CONFIG,
+        //     useClass: HammerConfig
+        // },
     ],
     bootstrap: [AppComponent]
 })
