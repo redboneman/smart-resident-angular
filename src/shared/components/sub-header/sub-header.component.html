@@ -11,4 +11,14 @@
         {{title}}
     </span>
 
+    <span class="type-select" *ngIf="type && types" [matMenuTriggerFor]="menu">
+        {{'SUBHEADER.' + type | translate}} <mat-icon>chevron_right</mat-icon>
+    </span>
+
+    <mat-menu #menu="matMenu" class="subheader-type-select">
+        <button mat-menu-item *ngFor="let item of types" [class.active]="item === type" (click)="type = item">
+            {{'SUBHEADER.' + item | translate}}
+        </button>
+    </mat-menu>
+
 </div>

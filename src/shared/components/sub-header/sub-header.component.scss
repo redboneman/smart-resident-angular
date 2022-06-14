@@ -1,6 +1,7 @@
 .sub-header {
     display: flex;
-    align-items: center;
+    flex-flow: column;
+    align-items: flex-start;
 
     &_back-button {
         //margin-right: 8px;
@@ -11,5 +12,33 @@
         font-weight: 700;
         font-family: ProximaNova, -apple-system, Arial, sans-serif;
         line-height: 26px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .type-select {
+        font-size: 20px;
+        font-weight: 700;
+        font-family: Geometria, sans-serif;
+        line-height: 26px;
+        cursor: pointer;
+        display: flex;
+        width: 160px;
+        color: var(--component-primary);
+        margin: 8px 0 0 0;
+
+        .mat-icon {
+            margin-left: auto;
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+        flex-flow: row nowrap;
+        align-items: center;
+
+        .type-select {
+            margin: 0 0 0 24px;
+        }
     }
 }

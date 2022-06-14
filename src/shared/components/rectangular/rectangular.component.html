@@ -1,0 +1,22 @@
+<div class="rectangular-element" [class.active]="isActive">
+    <button class="options-icon" mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <p class="title" [title]="title">{{title}}</p>
+    <p class="date">{{date}}</p>
+    <p class="description">{{description}}</p>
+    <ng-container [ngSwitch]="type">
+        <div class="statistics" *ngSwitchCase="'statistics'">
+            {{actionText}}
+        </div>
+
+        <button mat-button class="sr-kit_button"
+                *ngSwitchCase="'action'"
+                data-color="primary"
+                data-size="s"
+                [routerLink]="actionLink"
+        >
+            {{actionText}}
+        </button>
+    </ng-container>
+</div>

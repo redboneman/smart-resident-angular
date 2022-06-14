@@ -6,6 +6,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { BannerComponent } from './banner/banner.component';
 import { RightPanelComponent } from './right-panel/right-panel.component';
+import { RectangularComponent } from './rectangular/rectangular.component';
+import {RouterModule} from '@angular/router';
+import {TranslateModule} from '@ngx-translate/core';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -13,18 +17,23 @@ import { RightPanelComponent } from './right-panel/right-panel.component';
         LogoComponent,
         SubHeaderComponent,
         BannerComponent,
-        RightPanelComponent
+        RightPanelComponent,
+        RectangularComponent
     ],
     exports: [
         LogoComponent,
         SubHeaderComponent,
         BannerComponent,
-        RightPanelComponent
+        RightPanelComponent,
+        RectangularComponent
     ],
     imports: [
         CommonModule,
         MatButtonModule,
-        MatIconModule
+        MatIconModule,
+        RouterModule,
+        TranslateModule,
+        MatMenuModule
     ]
 })
 export class ComponentsModule {

@@ -43,12 +43,44 @@ export class AppComponent implements OnInit {
             this.safeURL('assets/icons/play_market.svg')
         )
         this.iconService.addSvgIcon(
-            'service_incidents',
-            this.safeURL('assets/icons/services/service_incidents.svg')
+            'service_interventions',
+            this.safeURL('assets/icons/services/service_interventions.svg')
         )
         this.iconService.addSvgIcon(
             'service_polls',
             this.safeURL('assets/icons/services/service_polls.svg')
+        )
+        this.iconService.addSvgIcon(
+            'service_points',
+            this.safeURL('assets/icons/services/service_points.svg')
+        )
+        this.iconService.addSvgIcon(
+            'service_tenants',
+            this.safeURL('assets/icons/services/service_tenants.svg')
+        )
+        this.iconService.addSvgIcon(
+            'service_phone_book',
+            this.safeURL('assets/icons/services/service_phone_book.svg')
+        )
+        this.iconService.addSvgIcon(
+            'service_operations',
+            this.safeURL('assets/icons/services/service_operations.svg')
+        )
+        this.iconService.addSvgIcon(
+            'service_leases',
+            this.safeURL('assets/icons/services/service_leases.svg')
+        )
+        this.iconService.addSvgIcon(
+            'service_collaborative',
+            this.safeURL('assets/icons/services/service_collaborative.svg')
+        )
+        this.iconService.addSvgIcon(
+            'service_advertisement',
+            this.safeURL('assets/icons/services/service_advertisement.svg')
+        )
+        this.iconService.addSvgIcon(
+            'service_accounts',
+            this.safeURL('assets/icons/services/service_accounts.svg')
         )
         this.iconService.addSvgIcon(
             'dashboard',

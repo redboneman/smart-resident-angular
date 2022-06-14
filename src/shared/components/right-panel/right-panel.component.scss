@@ -3,6 +3,7 @@
     display: flex;
     flex-flow: column nowrap;
     position: fixed;
+    gap: 16px;
     width: 100%;
     max-width: min(90%, 300px);
     min-width: 300px;
@@ -13,10 +14,19 @@
     transition: right .2s ease;
     box-shadow: -8px 0 16px rgba(0,0,0,.15);
     padding: 24px;
+    overflow: auto;
 
     &.opened {
         right: 0;
     }
+
+    .user-profile {
+        display: none;
+    }
+}
+
+.right-panel_overlay.disabled, .right-panel.profile-only {
+    display: none;
 }
 
 .right-panel_overlay {
@@ -48,5 +58,55 @@
         &_overlay {
             display: none;
         }
+
+        .user-profile {
+            margin-bottom: 16px;
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+
+            .text-wrapper {
+                text-align: left;
+
+                .welcome-message {
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #565656;
+                }
+
+                .username {
+                    font-size: 16px;
+                    line-height: 24px;
+                    font-weight: 700;
+                    color: #000;
+                }
+            }
+
+            .avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: #eecde3;
+                font-size: 24px;
+                line-height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .right-panel.profile-only {
+        background: none;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        box-shadow: none;
+        padding: 24px 48px;
+        overflow: visible;
     }
 }

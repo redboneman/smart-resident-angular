@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard.component';
 import {HomepageComponent} from './homepage/homepage.component';
 import {LoggedGuard} from '../../shared/guards/logged.guard';
+import {InterventionsComponent} from './interventions/interventions.component';
 
 const routes: Routes = [
     {
@@ -10,7 +11,8 @@ const routes: Routes = [
         component: DashboardComponent,
         canActivate: [LoggedGuard],
         children: [
-            {path: '', component: HomepageComponent}
+            {path: '', component: HomepageComponent},
+            {path: 'interventions', component: InterventionsComponent},
         ]
     }
 ];

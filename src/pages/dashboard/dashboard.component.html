@@ -26,7 +26,7 @@
                         <mat-icon [svgIcon]="service.icon"></mat-icon>
                         <span class="service-item_badge" *ngIf="service.badge"></span>
                     </div>
-                    <span class="service-item_title">{{service.key | translate}}</span>
+                    <span class="service-item_title">{{('SERVICES.' + [service.key]) | translate}}</span>
                 </a>
                 <a class="service-log-out">
                     <mat-icon>logout</mat-icon>

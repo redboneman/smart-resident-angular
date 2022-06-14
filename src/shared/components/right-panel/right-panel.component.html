@@ -1,8 +1,19 @@
-<div class="right-panel" [class.opened]="dashboardService.rightPanelOpened">
-    content
+<div class="right-panel"
+     [class.opened]="dashboardService.rightPanelOpened"
+     [class.profile-only]="profileOnly"
+>
+    <div class="user-profile">
+        <div class="text-wrapper">
+            <p class="welcome-message">🌤️ GOOD MORNING</p>
+            <p class="username">Jean-Christophe</p>
+        </div>
+        <div class="avatar">👑</div>
+    </div>
+    <ng-content></ng-content>
 </div>
 
 <div class="right-panel_overlay"
      (click)="dashboardService.toggleRightPanel()"
      [class.opened]="dashboardService.rightPanelOpened"
+     [class.disabled]="profileOnly"
 ></div>

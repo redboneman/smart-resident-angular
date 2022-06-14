@@ -1,6 +1,25 @@
 {
     "LOGIN": {
-        "TITLE": "IDENTIFIEZ-VOUS",
-        "DESCRIPTION": "Bienvenue sur l’interface de gestion de Smart Resident ! Connectez-vous et prenez soin de vos locataires."
+        "TITLE": "IDENTIFY YOURSELF",
+        "DESCRIPTION": "Welcome to the Smart Resident management interface! Connect and take care of your tenants."
+    },
+    "SERVICES": {
+        "interventions": "Interventions",
+        "polls": "Polls",
+        "tenants": "Tenants",
+        "pointsManagement": "Points management",
+        "accounts": "Accounts",
+        "collaborative": "Collaboration",
+        "phoneBook": "Phone book",
+        "advertisement": "Advertisements",
+        "leases": "Leases",
+        "operations": "Operations"
+    },
+    "LOGO": {
+        "subTitle": "YOUR TENANT INTERFACE"
+    },
+    "SUBHEADER": {
+        "active": "Active",
+        "inactive": "Inactive"
     }
 }

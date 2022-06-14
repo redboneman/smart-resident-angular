@@ -8,18 +8,24 @@ import {ComponentsModule} from '../../shared/components/components.module';
 import {MatIconModule} from '@angular/material/icon';
 import {TranslateModule} from '@ngx-translate/core';
 import {DashboardService} from '../../shared/services/dashboard.service';
-import { HeaderComponent } from './header/header.component';
+import {HeaderComponent} from './header/header.component';
 import {MatButtonModule} from '@angular/material/button';
 import {TouchModule} from '../../shared/directives/touch.directive';
+import {InterventionsComponent} from './interventions/interventions.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {RequestInterceptor} from '../../shared/request.interceptor';
+import {TokenService} from '../../shared/services/token.service';
 
 @NgModule({
     declarations: [
         DashboardComponent,
         HomepageComponent,
-        HeaderComponent
+        HeaderComponent,
+        InterventionsComponent
     ],
     imports: [
         CommonModule,
+        HttpClientModule,
         DashboardRoutingModule,
         ComponentsModule,
         MatIconModule,
@@ -28,7 +34,9 @@ import {TouchModule} from '../../shared/directives/touch.directive';
         TouchModule
     ],
     providers: [
-        DashboardService
+        {provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true},
+        DashboardService,
+        TokenService
     ]
 })
 export class DashboardModule {

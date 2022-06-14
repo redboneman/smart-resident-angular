@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs';
 
 interface DashboardServiceItem {
     key: string,
@@ -13,10 +14,12 @@ export class DashboardService {
     public navigationOpened = false;
     public rightPanelOpened = false;
 
+    public rightPanelObserver = new Subject<any>();
+
     public services: DashboardServiceItem[] = [
         {
-            key: 'incidents',
-            icon: 'service_incidents',
+            key: 'interventions',
+            icon: 'service_interventions',
             badge: true
         },
         {
@@ -24,25 +27,37 @@ export class DashboardService {
             icon: 'service_polls'
         },
         {
-            key: 'polls',
-            icon: 'service_polls'
+            key: 'tenants',
+            icon: 'service_tenants'
         },
         {
-            key: 'polls',
-            icon: 'service_polls'
+            key: 'pointsManagement',
+            icon: 'service_points'
         },
         {
-            key: 'polls',
-            icon: 'service_polls'
+            key: 'accounts',
+            icon: 'service_accounts'
         },
         {
-            key: 'polls',
-            icon: 'service_polls'
+            key: 'collaborative',
+            icon: 'service_collaborative'
         },
         {
-            key: 'polls',
-            icon: 'service_polls'
-        }
+            key: 'phoneBook',
+            icon: 'service_phone_book'
+        },
+        {
+            key: 'advertisement',
+            icon: 'service_advertisement'
+        },
+        {
+            key: 'leases',
+            icon: 'service_leases'
+        },
+        {
+            key: 'operations',
+            icon: 'service_operations'
+        },
     ];
 
     public toggleNavigation() {
@@ -51,6 +66,7 @@ export class DashboardService {
 
     public toggleRightPanel() {
         this.rightPanelOpened = !this.rightPanelOpened;
+        this.rightPanelObserver.next(null);
     }
 
 }

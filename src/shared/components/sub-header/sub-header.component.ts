@@ -13,7 +13,11 @@ export class SubHeaderComponent implements OnInit {
     @Input()
     backButton: boolean | undefined;
     @Input()
-    title: string| undefined;
+    title: string | undefined;
+    @Input()
+    types: string[] | undefined;
+    @Input()
+    type: string | undefined;
 
     constructor() {
     }
