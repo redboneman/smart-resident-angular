@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+    production: true,
+
+    api: 'https://api.smartresident.mobi/api/',
+    domainName: 'api.smartresident.mobi'
 };

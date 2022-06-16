@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
+import {UserService} from '../../../shared/services/user.service';
 
 @Component({
     selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
     })
 
     constructor(
-        private formBuilder: FormBuilder
+        private formBuilder: FormBuilder,
+        private userService: UserService
     ) {
     }
 
@@ -32,7 +34,8 @@ export class LoginComponent implements OnInit {
     }
 
     submitForm() {
-        console.log(this.authForm.value)
+        // console.log(this.authForm.value)
+        this.userService.login(this.authForm.value);
     }
 
 }

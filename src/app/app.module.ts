@@ -8,7 +8,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ComponentsModule} from '../shared/components/components.module';
-import {HammerConfig} from '../shared/services/hammer.service';
+import {UserService} from '../shared/services/user.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, 'assets/i18n/', '.json?cb=' + new Date().getTime());
@@ -30,15 +30,9 @@ export function HttpLoaderFactory(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
-        ComponentsModule,
-        // HammerModule
+        ComponentsModule
     ],
-    providers: [
-        // {
-        //     provide: HAMMER_GESTURE_CONFIG,
-        //     useClass: HammerConfig
-        // },
-    ],
+    providers: [UserService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,10 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {LoggedGuard} from '../shared/guards/logged.guard';
 
 const routes: Routes = [
     {
         path: 'dashboard',
-        loadChildren: () => import('src/pages/dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () => import('src/pages/dashboard/dashboard.module').then(m => m.DashboardModule),
+        canActivate: [LoggedGuard]
     },
     {
         path: 'auth',
@@ -19,7 +21,8 @@ const routes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [LoggedGuard]
 })
 export class AppRoutingModule {
 }

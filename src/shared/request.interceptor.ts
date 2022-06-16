@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {catchError, mergeMap, Observable, skipWhile, take, throwError, timeout} from 'rxjs';
-import {TokenService} from './services/token.service';
+import {UserService} from './services/user.service';
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
@@ -9,28 +9,30 @@ export class RequestInterceptor implements HttpInterceptor {
     private passWithoutTokenRegex = /\/refresh/;
 
     constructor(
-        private token: TokenService
+        private userService: UserService
     ) {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (this.passWithoutTokenRegex.test(req.url)) return next.handle(req);
-        if (this.token.accessToken) {
-            req.headers.set('Authorization', `Bearer ${this.token.accessToken}`);
+        if (this.userService.token && this.userService.isTokenAlive()) {
+            req.headers.set('Authorization', `Bearer ${this.userService.token}`);
             return next.handle(req);
         }
-        if (this.token.isTokenRefreshAvailable()) {
-            this.token.refresh();
+        if (this.userService.isTokenRefreshAvailable()) {
+            this.userService.refreshToken();
         }
-        return this.token.tokenUpdated.pipe(
-            skipWhile(() => this.token.tokenStatus === 'pending'),
+        return this.userService.tokenUpdated.pipe(
+            skipWhile(() => this.userService.tokenStatus === 'pending'),
             timeout(30000),
             take(1),
             mergeMap(() => {
-                req.headers.set('Authorization', `Bearer ${this.token.accessToken}`);
+                req.headers.set('Authorization', `Bearer ${this.userService.token}`);
                 return next.handle(req).pipe(
                     catchError(err => {
-                        // todo logout
+                        if (err.status === 401 || err.status === 403) {
+                            this.userService.logout();
+                        }
                         return throwError(err);
                     })
                 );

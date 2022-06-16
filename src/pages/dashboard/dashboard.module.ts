@@ -14,7 +14,7 @@ import {TouchModule} from '../../shared/directives/touch.directive';
 import {InterventionsComponent} from './interventions/interventions.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RequestInterceptor} from '../../shared/request.interceptor';
-import {TokenService} from '../../shared/services/token.service';
+import {UserService} from '../../shared/services/user.service';
 
 @NgModule({
     declarations: [
@@ -36,7 +36,7 @@ import {TokenService} from '../../shared/services/token.service';
     providers: [
         {provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true},
         DashboardService,
-        TokenService
+        UserService
     ]
 })
 export class DashboardModule {
